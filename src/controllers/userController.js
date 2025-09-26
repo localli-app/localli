@@ -4,8 +4,8 @@ import FirestoreUtils from '../utils/firestoreUtils.js';
 const userController = {
   async createUser(req, res) {
     try {
-      const { userId, name, email, passwordHash, role } = req.body;
-      const user = new User({ userId, name, email, passwordHash, role });
+      const { userId, name, email, role } = req.body;
+      const user = new User({ userId, name, email, role });
 
       await FirestoreUtils.saveDocument('Users', user.userId, user.toJSON());
       res.status(201).json({ success: true, data: user });
