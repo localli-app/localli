@@ -89,4 +89,4 @@ class FirestoreUtils {
   }
 }
 
-module.exports = FirestoreUtils;
+export default FirestoreUtils;

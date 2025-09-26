@@ -16,4 +16,4 @@ class Booking {
   }
 }
 
-module.exports = Booking;
+export default Booking;
