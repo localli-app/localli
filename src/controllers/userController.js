@@ -1,16 +1,22 @@
+import { db } from '../config/firebase.js';
 import User from '../models/User.js';
 import FirestoreUtils from '../utils/firestoreUtils.js';
 
 const userController = {
   async createUser(req, res) {
     try {
-      const { userId, name, email, role } = req.body;
-      const user = new User({ userId, name, email, role });
+        const { name, email, role } = req.body;
 
-      await FirestoreUtils.saveDocument('Users', user.userId, user.toJSON());
-      res.status(201).json({ success: true, data: user });
+        // Generate a new document reference (auto ID)
+        const userRef = db.collection('Users').doc();
+        const userId = userRef.id;
+
+        const user = new User({ userId, name, email, role });
+
+        await FirestoreUtils.saveDocument('Users', user.userId, user.toJSON());
+        res.status(201).json({ success: true, data: user });
     } catch (err) {
-      res.status(500).json({ success: false, error: err.message });
+        res.status(500).json({ success: false, error: err.message });
     }
   },
 
