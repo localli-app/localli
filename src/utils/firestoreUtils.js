@@ -1,9 +1,9 @@
 import admin from 'firebase-admin';
-
+import serviceAccount from '../config/FSServiceAccountKey.json';
 // Initialize Firebase if not already initialized
 if (!admin.apps.length) {
   admin.initializeApp({
-    credential: admin.credential.cert(require('../config/FSServiceAccountKey.json')),
+    credential: admin.credential.cert(serviceAccount),
   });
 }
 
