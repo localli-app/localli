@@ -13,5 +13,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
 
+console.log('Initialized firebase admin:', !!admin.apps.length);
 const db = admin.firestore();
+console.log('Firestore instance created:', !!db);
 export { admin, db };
