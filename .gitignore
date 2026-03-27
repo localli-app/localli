@@ -1,0 +1,57 @@
+# ==========================================
+# 🔒 Sensitive Files
+# ==========================================
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Firebase / Google Cloud credentials
+*.json
+firebase-debug.log
+serviceAccountKey.json
+
+# ==========================================
+# 🛠 Node.js / Express
+# ==========================================
+# Dependencies
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# ⚡ Build / Cache
+# ==========================================
+# Build output
+/dist
+/build
+
+# Optional cache
+.cache
+coverage
+
+# ==========================================
+# 💻 OS / Editor Files
+# ==========================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
